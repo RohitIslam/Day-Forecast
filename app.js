@@ -1,0 +1,8 @@
+const request = require("request");
+
+const url =
+  "https://api.darksky.net/forecast/0600da0467cac24d99d77841bd89f98e/37.8267,-122.4233?units=si";
+
+request({ url: url, json: true }, (error, response) => {
+  console.log(response.body.currently);
+});
