@@ -6,7 +6,7 @@ const geocode = (address, callback) => {
     address +
     ".json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1567266180009&autocomplete=true&types=country";
 
-  request({ uri: url, json: true }, (error, response) => {
+  request({ url, json: true }, (error, response) => {
     if (error) {
       callback("Unable to connect", undefined);
     } else if (response.body.features.length === 0) {
