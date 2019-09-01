@@ -41,6 +41,22 @@ app.get("/weather", (req, res) => {
   res.send("Express Weather");
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    errorMsg: "404, Help Article Not Found",
+    name: "Rohit"
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    errorMsg: "404, Page Not Found",
+    name: "Rohit"
+  });
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
