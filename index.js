@@ -56,11 +56,10 @@ app.get("/weather", (req, res) => {
         return res.send({ error });
       }
       res.send({
-        forecast: forecastData,
         Location: data.location,
         Latitude: data.latitude,
         Longitude: data.longitude,
-        Rain_Probability: `${forecastData.precipProbability}%`,
+        Rain_Probability: `${forecastData.precipProbability} %`,
         Temperature: `${forecastData.temperature} degree`
       });
     });
